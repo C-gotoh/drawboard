@@ -140,7 +140,7 @@ function draw() {
 function keyPressed() {
     if (key === 'h') help = !help;
     if (key === 'e') pg = createGraphics(windowWidth, windowHeight);
-    if (key === 'd') drawMode = !drawMode;
+    if (key === 'c') drawMode = !drawMode;
     if (key === '1') field = 1;
     if (key === '2') field = 2;
     if (key === '3') field = 3;
