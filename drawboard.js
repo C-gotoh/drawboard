@@ -174,6 +174,7 @@ function keyPressed() {
     if (key === 'h') help = !help;
     if (key === 'e') pg = createGraphics(windowWidth, windowHeight);
     if (key === 'c') drawMode = !drawMode;
+    if (key === 'k') initKickOff();
     if (key === '1') field = 1;
     if (key === '2') field = 2;
     if (key === '3') field = 3;
@@ -191,6 +192,35 @@ function keyPressed() {
             }
         }
     }
+}
+
+function initKickOff() {
+    things = [];
+    spawnBall();
+    var ball = things[0];
+    var car  = new Thing(ball.x - windowHeight/4.2, ball.y, z_counter, blOctane);
+    car.angle = 90;
+    things.push(car);
+
+    car  = new Thing(ball.x + windowHeight/4.2, ball.y, z_counter, orOctane);
+    car.angle = -90;
+    things.push(car);
+
+    car  = new Thing(ball.x - windowHeight/5, ball.y + windowHeight/7, z_counter, blDominus);
+    car.angle = 45;
+    things.push(car);
+
+    car  = new Thing(ball.x + windowHeight/5, ball.y + windowHeight/7, z_counter, orDominus);
+    car.angle = -45;
+    things.push(car);
+
+    car  = new Thing(ball.x - windowHeight/5, ball.y - windowHeight/7, z_counter, blBatmob);
+    car.angle = 135;
+    things.push(car);
+
+    car  = new Thing(ball.x + windowHeight/5, ball.y - windowHeight/7, z_counter, orBatmob);
+    car.angle = -135;
+    things.push(car);
 }
 
 //function for selecting tools and items on screen
