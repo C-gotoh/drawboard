@@ -163,6 +163,7 @@ function draw() {
         text("Refresh the browser if you get stuck or have any other problem. Press H if you want to see these tips again.", 160, windowHeight / 2 + 400, 280, 60);
         text("This is the field. The yellow marks are the boost locations.", windowWidth / 2 + 10, windowHeight / 2 - 210, 180, 40);
         text("This grey area around the field represents the walls and backboards.", windowWidth / 2 + 10, windowHeight / 2 - 340, 210, 40);
+        text("Press 'k' to spawn three cars at kickoff position.", 160, windowHeight / 2 + 50);
         fill(255, 50, 50);
         text("It's not possible to drag the cars in Draw Mode.", 160, windowHeight / 2 + 25);
         pop();
