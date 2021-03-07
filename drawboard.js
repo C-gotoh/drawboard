@@ -62,9 +62,42 @@ function setup() {
     strokeWeight(0);
     frameRate(60);
 }
+function updateMovement() {
+    if (keyIsDown('W'.charCodeAt())) {
+        for (var i = 0; i < things.length; i++) {
+            if (things[i].select) {
+                things[i].x += 5 * cos(-90+things[i].angle);
+                things[i].y += 5 * sin(-90+things[i].angle);
+            }
+        }
+    }
+    if (keyIsDown('S'.charCodeAt())) {
+        for (var i = 0; i < things.length; i++) {
+            if (things[i].select) {
+                things[i].x += 5 * cos(90+things[i].angle);
+                things[i].y += 5 * sin(90+things[i].angle);
+            }
+        }
+    }
+    if (keyIsDown('A'.charCodeAt())) {
+        for (var i = 0; i < things.length; i++) {
+            if (things[i].select) {
+                things[i].angle -= 5;
+            }
+        }
+    }
+    if (keyIsDown('D'.charCodeAt())) {
+        for (var i = 0; i < things.length; i++) {
+            if (things[i].select) {
+                things[i].angle += 5;
+            }
+        }
+    }
+}
 
 //function that actually display stuff on screen. Refreshes every frame.
 function draw() {
+    updateMovement();
     fill(blue);
     rect(0, 0, windowWidth / 2, windowHeight);
     fill(orange);
