@@ -190,19 +190,7 @@ function mousePressed() {
             penWeight = 48;
         }
     } else if (mouseX > 75 - 23 && mouseX < 75 + 23 && mouseY > windowHeight / 2 - 120 - 20 && mouseY < windowHeight / 2 - 120 + 20) {
-        var ifBall = false;
-        for (var i = 0; i < things.length; i++) {
-            if (things[i].img == ball) {
-                things[i].x = windowWidth / 2;
-                things[i].y = windowHeight / 2;
-                ifBall = true;
-                break;
-            }
-        }
-        if (!ifBall) { // this one spawns the ball
-            things.push(new Thing(windowWidth / 2, windowHeight / 2, z_counter, ball));
-            z_counter++;
-        }
+        spawnBall();
     } else if (mouseX > 50 - 20 && mouseX < 50 + 20) { 		// these spawn the blue cars
         if (mouseY > windowHeight / 2 - 80 && mouseY < windowHeight / 2 - 40) {
             things.push(new Thing(mouseX, mouseY, z_counter, blOctane));
@@ -241,6 +229,22 @@ function mousePressed() {
             // things[selected].z = z_counter;  // Turn it back on as soon as we figure out p5 layers
             // z_counter++;
         }
+    }
+}
+
+function spawnBall() {
+    var ifBall = false;
+    for (var i = 0; i < things.length; i++) {
+        if (things[i].img == ball) {
+            things[i].x = windowWidth / 2;
+            things[i].y = windowHeight / 2;
+            ifBall = true;
+            break;
+        }
+    }
+    if (!ifBall) { // this one spawns the ball
+        things.push(new Thing(windowWidth / 2, windowHeight / 2, z_counter, ball));
+        z_counter++;
     }
 }
 
