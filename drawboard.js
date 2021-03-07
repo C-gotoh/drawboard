@@ -121,8 +121,8 @@ function draw() {
         rect(windowWidth / 2, windowHeight / 2 - 350, 230, 50);
         fill(255);
         textSize(12);
-        text("Click the pen icon to turn Draw Mode on and off, drag the mouse over the screen to draw.", 160, windowHeight / 2 - 370, 280, 30);
-        text("Click on the 'refresh' icon to erase your drawing.", 160, windowHeight / 2 - 320);
+        text("(C) Click the pen icon to turn Draw Mode on and off, drag the mouse over the screen to draw.", 160, windowHeight / 2 - 370, 280, 30);
+        text("(E) Click on the 'refresh' icon to erase your drawing.", 160, windowHeight / 2 - 335, 280, 30);
         text("The circles are brush presets. The white slightly bigger one is an 'eraser', and the bigger green and red ones are highlighters with low opacity.", 160, windowHeight / 2 - 300, 280, 70);
         text("Click on the ball icon to spawn a ball on the center of the field. Clicking this icon again will reset the ball position to the center of the field (useful for kick offs).", 160, windowHeight / 2 - 135, 280, 100);
         text("Click and drag cars directly from the side bar to the field. Use keyboard arrow keys, left and right, to rotate the cars (it will rotate the last car you clicked or dragged).", 160, windowHeight / 2 - 60, 280, 100);
