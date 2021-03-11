@@ -61,6 +61,7 @@ function setup() {
     angleMode(DEGREES);
     strokeWeight(0);
     frameRate(60);
+    rotateField = false;
 }
 function updateMovement() {
     if (keyIsDown('W'.charCodeAt())) {
@@ -104,11 +105,22 @@ function draw() {
     rect(windowWidth / 2, 0, windowWidth / 2, windowHeight);
     fill(180);
     rect(0, 0, 150, windowHeight);
+
+    // draw field
+    push();
+    if (rotateField) {
+        rotate(90);
+        translate(-windowWidth/2, -windowHeight/2);
+        translate(windowHeight/2, -windowWidth/2);
+    }
     if (field === 2) image(imgField6, windowWidth / 2, windowHeight / 2);
     else if (field === 3) image(imgField9, windowWidth / 2, windowHeight / 2);
     else image(imgField, windowWidth / 2, windowHeight / 2);
+    pop();
+
     if (!drawMode) image(penOff, 50, windowHeight / 2 - 340);
     else image(penOn, 50, windowHeight / 2 - 340);
+
     push();
     strokeWeight(1);
     stroke(120);
@@ -175,6 +187,7 @@ function keyPressed() {
     if (key === 'h') help = !help;
     if (key === 'e') pg = createGraphics(windowWidth, windowHeight);
     if (key === 'c') drawMode = !drawMode;
+    if (key === 'R') rotateField = !rotateField;
     if (key === 'k') initKickOff();
     if (key === '1') field = 1;
     if (key === '2') field = 2;
