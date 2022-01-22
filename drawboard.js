@@ -208,11 +208,16 @@ function draw() {
     }
 }
 
+function clearThings() {
+  things = [];
+}
+
 //Function for keyboard hotkeys
 function keyPressed() {
     if (key === 'h') help = !help;
     if (key === 'e') pg = createGraphics(windowWidth, windowHeight);
     if (key === 'c') drawMode = !drawMode;
+    if (key === 'C') clearThings();
     if (key === 'R') rotateField = !rotateField;
     if (key === 'k') initKickOff();
     if (key === '1') field = 1;
