@@ -63,34 +63,38 @@ function setup() {
     frameRate(60);
     rotateField = false;
 }
+
 function updateMovement() {
+    let speed = 5;
+    let rotateSpeed = 5;
+
     if (keyIsDown('W'.charCodeAt())) {
         for (var i = 0; i < things.length; i++) {
             if (things[i].select) {
-                things[i].x += 5 * cos(-90+things[i].angle);
-                things[i].y += 5 * sin(-90+things[i].angle);
+                things[i].x += speed * cos(-90+things[i].angle);
+                things[i].y += speed * sin(-90+things[i].angle);
             }
         }
     }
     if (keyIsDown('S'.charCodeAt())) {
         for (var i = 0; i < things.length; i++) {
             if (things[i].select) {
-                things[i].x += 5 * cos(90+things[i].angle);
-                things[i].y += 5 * sin(90+things[i].angle);
+                things[i].x += speed * cos(90+things[i].angle);
+                things[i].y += speed * sin(90+things[i].angle);
             }
         }
     }
     if (keyIsDown('A'.charCodeAt())) {
         for (var i = 0; i < things.length; i++) {
             if (things[i].select) {
-                things[i].angle -= 5;
+                things[i].angle -= rotateSpeed;
             }
         }
     }
     if (keyIsDown('D'.charCodeAt())) {
         for (var i = 0; i < things.length; i++) {
             if (things[i].select) {
-                things[i].angle += 5;
+                things[i].angle += rotateSpeed;
             }
         }
     }
