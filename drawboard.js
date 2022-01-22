@@ -186,6 +186,8 @@ function draw() {
         fill(0);
         rect(150, windowHeight / 2 - 380, 300, 140);
         rect(150, windowHeight / 2 - 145, 300, 220);
+        // New info box.
+        rect(windowWidth / 2, windowHeight / 2 + 120, 300, 70);
         rect(150, windowHeight / 2 + 200, 300, 65);
         rect(150, windowHeight / 2 + 385, 300, 70);
         rect(windowWidth / 2, windowHeight / 2 - 220, 200, 50);
@@ -202,6 +204,9 @@ function draw() {
         text("This is the field. The yellow marks are the boost locations.", windowWidth / 2 + 10, windowHeight / 2 - 210, 180, 40);
         text("This grey area around the field represents the walls and backboards.", windowWidth / 2 + 10, windowHeight / 2 - 340, 210, 40);
         text("Press 'k' to spawn three cars at kickoff position.", 160, windowHeight / 2 + 50);
+        text("NEW: Press 'R' to rotate the board.", windowWidth / 2 + 10, windowHeight / 2 + 140);
+        text("NEW: Press 'C' to reset the board.", windowWidth / 2 + 10, windowHeight / 2 + 160);
+        text("NEW: Scroll to rotate the selected object.", windowWidth / 2 + 10, windowHeight / 2 + 180);
         fill(255, 50, 50);
         text("It's not possible to drag the cars in Draw Mode.", 160, windowHeight / 2 + 25);
         pop();
