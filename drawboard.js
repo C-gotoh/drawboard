@@ -27,6 +27,28 @@ class Thing {
     }
 }
 
+let scrollEventLock = false;
+
+function scrollHandler(wheelEvent) {
+  // Rotate selected thing.
+  for (var i = 0; i < things.length; i++) {
+      if (things[i].select) {
+          things[i].angle += 0.3 * wheelEvent.deltaY;
+      }
+  }
+}
+
+document.addEventListener('wheel', function(e) {
+  if (!scrollEventLock) {
+    window.requestAnimationFrame(function() {
+      scrollHandler(e);
+      scrollEventLock = false;
+    });
+
+    scrollEventLock = true;
+  }
+});
+
 
 //function that loads all images in the app
 function preload() {
